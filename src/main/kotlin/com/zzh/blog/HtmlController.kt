@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.PathVariable
 
 @Controller
 class HtmlController(private val articleRepository: ArticleRepository,
-                     private val markdownConverter: MarkdownConverter) {
+                     private val markdownConverter: MarkdownConverter,
+                     private val properties: BlogProperties) {
     @GetMapping("/")
     fun blog(model: Model): String {
-        model["title"] = "blog"
+        model["title"] = properties.title
+        model["banner"] = properties.banner
         model["articles"] = articleRepository.findAllByOrderByAddedAtDesc().map { it.render() }
         return "blog"
     }

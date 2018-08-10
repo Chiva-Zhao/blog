@@ -10,7 +10,7 @@ class MarkdownConverter : (String) -> String {
     private val parser = Parser.builder().extensions(listOf(AutolinkExtension.create())).build()
     private val render = HtmlRenderer.builder().build()
     override fun invoke(input: String): String {
-        if (input == null || input.equals(""))
+        if (input.equals(""))
             return ""
         return render.render(parser.parse(input))
     }

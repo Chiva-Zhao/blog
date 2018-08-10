@@ -6,3 +6,8 @@ spring:
   jackson:
     serialization:
       indent-output: true
+blog:
+  title: Blog
+  banner:
+    title: Warning
+    content: The blog will be down tomorrow.
