@@ -1,0 +1,8 @@
+debug: true
+spring:
+  h2:
+    console:
+      enabled: true
+  jackson:
+    serialization:
+      indent-output: true
